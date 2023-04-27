@@ -1,0 +1,17 @@
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Infrastructure\bin\Debug\net7.0\Infrastructure.deps.json
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Infrastructure\bin\Debug\net7.0\Infrastructure.runtimeconfig.json
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Infrastructure\bin\Debug\net7.0\Infrastructure.dll
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Infrastructure\bin\Debug\net7.0\Infrastructure.pdb
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Infrastructure\bin\Debug\net7.0\Domain.dll
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Infrastructure\bin\Debug\net7.0\Domain.pdb
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Infrastructure\obj\Debug\net7.0\Infrastructure.csproj.AssemblyReference.cache
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Infrastructure\obj\Debug\net7.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Infrastructure\obj\Debug\net7.0\Infrastructure.AssemblyInfoInputs.cache
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Infrastructure\obj\Debug\net7.0\Infrastructure.AssemblyInfo.cs
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Infrastructure\obj\Debug\net7.0\Infrastructure.csproj.CoreCompileInputs.cache
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Infrastructure\obj\Debug\net7.0\Infrastructure.csproj.CopyComplete
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Infrastructure\obj\Debug\net7.0\Infrastructure.dll
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Infrastructure\obj\Debug\net7.0\refint\Infrastructure.dll
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Infrastructure\obj\Debug\net7.0\Infrastructure.pdb
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Infrastructure\obj\Debug\net7.0\Infrastructure.genruntimeconfig.cache
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Infrastructure\obj\Debug\net7.0\ref\Infrastructure.dll

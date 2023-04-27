@@ -6,7 +6,8 @@ namespace Microsoft.Extensions.DependencyInjection
     {
         public static IServiceCollection AddAPI(this IServiceCollection services)
         {
-
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            return services;
         }
     }
 }

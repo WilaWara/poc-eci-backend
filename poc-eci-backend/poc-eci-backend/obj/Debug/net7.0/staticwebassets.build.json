@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "22GvjVDhQEwjbEruiloaAYtf9mk9WYSzGhtsBLtA4uc=",
+  "Source": "poc-eci-backend",
+  "BasePath": "_content/poc-eci-backend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

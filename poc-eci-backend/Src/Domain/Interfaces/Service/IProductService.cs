@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.Entities;
 
 namespace Domain.Interfaces.Service
 {
-    internal class IProductService
+    public interface IProductService
     {
+        public Task<Product> Create(Product product);
+
+        public Task<IEnumerable<Product>> GetAll();
+
+        public Task<IEnumerable<Product>> GetByFilters(string? name, string? category, decimal? minPrice, decimal? maxPrice);
+
+        public Task<Product> Update(Product product);
+
+        public void Delete(int productId);
     }
 }

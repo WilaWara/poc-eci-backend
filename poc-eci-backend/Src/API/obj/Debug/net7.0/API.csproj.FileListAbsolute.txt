@@ -1,0 +1,17 @@
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\API\bin\Debug\net7.0\API.deps.json
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\API\bin\Debug\net7.0\API.dll
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\API\bin\Debug\net7.0\API.pdb
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\API\bin\Debug\net7.0\Application.dll
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\API\bin\Debug\net7.0\Domain.dll
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\API\bin\Debug\net7.0\Application.pdb
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\API\bin\Debug\net7.0\Domain.pdb
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\API\obj\Debug\net7.0\API.csproj.AssemblyReference.cache
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\API\obj\Debug\net7.0\API.GeneratedMSBuildEditorConfig.editorconfig
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\API\obj\Debug\net7.0\API.AssemblyInfoInputs.cache
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\API\obj\Debug\net7.0\API.AssemblyInfo.cs
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\API\obj\Debug\net7.0\API.csproj.CoreCompileInputs.cache
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\API\obj\Debug\net7.0\API.csproj.CopyComplete
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\API\obj\Debug\net7.0\API.dll
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\API\obj\Debug\net7.0\refint\API.dll
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\API\obj\Debug\net7.0\API.pdb
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\API\obj\Debug\net7.0\ref\API.dll

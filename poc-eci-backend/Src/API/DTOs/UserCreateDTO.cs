@@ -1,12 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace API.DTOs
 {
-    internal class UserCreateDTO
+    public class UserCreateDTO
     {
+        [Required(ErrorMessage = "The user name is required")]
+        public string Name { get; set; }
+
+        [Required(ErrorMessage = "The user email is required")]
+        public string Email { get; set; }
+
+        [Required(ErrorMessage = "The user password is required")]
+        public string Password { get; set; }
+
+        [Required(ErrorMessage = "The user role is required")]
+        public string Role { get; set; }
     }
 }

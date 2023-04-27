@@ -1,0 +1,12 @@
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Domain\bin\Debug\net7.0\Domain.deps.json
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Domain\bin\Debug\net7.0\Domain.dll
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Domain\bin\Debug\net7.0\Domain.pdb
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Domain\obj\Debug\net7.0\Domain.csproj.AssemblyReference.cache
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Domain\obj\Debug\net7.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Domain\obj\Debug\net7.0\Domain.AssemblyInfoInputs.cache
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Domain\obj\Debug\net7.0\Domain.AssemblyInfo.cs
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Domain\obj\Debug\net7.0\Domain.csproj.CoreCompileInputs.cache
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Domain\obj\Debug\net7.0\Domain.dll
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Domain\obj\Debug\net7.0\refint\Domain.dll
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Domain\obj\Debug\net7.0\Domain.pdb
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Domain\obj\Debug\net7.0\ref\Domain.dll

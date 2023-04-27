@@ -1,12 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.Entities;
 
 namespace Domain.Interfaces.Repository
 {
-    internal class IProductRepository
+    public interface IProductRepository
     {
+        public Task<Product> Create(Product product);
+
+        public Task<IEnumerable<Product>> GetAll();
+
+        public Product GetById(int productId);
+
+        public Task<IEnumerable<Product>> GetByFilters(string? name, string? category, decimal? minPrice, decimal? maxPrice);
+
+        public Task<Product> Update(Product product);
+
+        public void Delete(int productId);
     }
 }

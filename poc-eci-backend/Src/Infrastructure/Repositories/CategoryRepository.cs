@@ -1,12 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.Entities;
+using Domain.Interfaces.Repository;
+using Infrastructure.Data;
 
 namespace Infrastructure.Repositories
 {
-    internal class CategoryRepository
+    public class CategoryRepository : ICategoryRepository
     {
+        private readonly ApplicationDBContext _db;
+
+        public CategoryRepository(ApplicationDBContext db)
+        {
+            _db = db;
+        }
+
+        public async Task<Category> Create(Category category)
+        {
+            _db.Categories.Add(category);
+            await _db.SaveChangesAsync();
+            return category;
+        }
     }
 }

@@ -1,12 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.Entities;
+using Domain.Interfaces.Repository;
+using Domain.Interfaces.Service;
 
 namespace Application.Services
 {
-    internal class UserService
+    public class UserService : IUserService
     {
+        private readonly IUserRepository _userRepository;
+
+        public UserService(IUserRepository userRepository)
+        {
+            _userRepository = userRepository;
+        }
+
+        public Task<User> Create(User user)
+        {
+            return _userRepository.Create(user);
+        }
     }
 }
