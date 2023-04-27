@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace API.DTOs
 {
-    internal class CategoryCreateDTO
+    public class CategoryCreateDTO
     {
+        [Required(ErrorMessage = "The category name is required")]
+        public string Name { get; set; }
     }
 }

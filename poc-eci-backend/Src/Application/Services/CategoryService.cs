@@ -1,12 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.Entities;
+using Domain.Interfaces.Repository;
+using Domain.Interfaces.Service;
 
 namespace Application.Services
 {
-    internal class CategoryService
+    public class CategoryService : ICategoryService
     {
+        private readonly ICategoryRepository _categoryRepository;
+
+        public CategoryService(ICategoryRepository categoryRepository)
+        {
+            _categoryRepository = categoryRepository;
+        }
+        public Task<Category> Create(Category category)
+        {
+            return _categoryRepository.Create(category);
+        }
     }
 }

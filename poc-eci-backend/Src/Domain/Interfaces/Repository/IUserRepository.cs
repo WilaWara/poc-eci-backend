@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.Entities;
 
 namespace Domain.Interfaces.Repository
 {
-    internal interface IUserRepository
+    public interface IUserRepository
     {
+        public Task<User> Create(User user);
     }
 }

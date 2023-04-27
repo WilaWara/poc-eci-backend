@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using Application.Services;
+using Domain.Interfaces.Service;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -6,7 +7,10 @@ namespace Microsoft.Extensions.DependencyInjection
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
-
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IUserService, UserService>();
+            return services;
         }
     }
 }
