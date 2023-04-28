@@ -19,5 +19,16 @@ namespace Infrastructure.Repositories
             await _db.SaveChangesAsync();
             return user;
         }
+
+        public async Task<User> Login(string email, string password)
+        {
+            User? user = _db.Users
+                .FirstOrDefault(
+                    u => u.Email.ToLower() == email.ToLower() &&
+                    u.Password == password
+                );
+            return user;
+        }
+
     }
 }

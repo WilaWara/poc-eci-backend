@@ -89,3 +89,5 @@ D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Server\bin\Debug\net7.0
 D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Server\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
 D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Server\bin\Debug\net7.0\Mono.TextTemplating.dll
 D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Server\bin\Debug\net7.0\System.CodeDom.dll
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Server\bin\Debug\net7.0\Microsoft.Practices.ServiceLocation.dll
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Server\bin\Debug\net7.0\XAct.Core.PCL.dll

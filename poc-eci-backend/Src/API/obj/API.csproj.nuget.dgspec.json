@@ -139,6 +139,14 @@
             "MediatR": {
               "target": "Package",
               "version": "[12.0.1, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "XAct.Core.PCL": {
+              "target": "Package",
+              "version": "[0.0.5014, )"
             }
           },
           "imports": [
