@@ -28,10 +28,10 @@ namespace API.Controllers.V1
             }
 
             User newUser = _mapper.Map<User>(userCreateDTO);
-            var savedUser = await _userServices.Create(newUser);
+            User savedUser = await _userServices.Create(newUser);
 
             var responseUser = _mapper.Map<UserResponseDTO>(savedUser);
-            return CreatedAtAction("Successfully created", new { id = responseUser.Id }, responseUser);
+            return Ok(responseUser);
         }
     }
 }

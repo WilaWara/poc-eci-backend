@@ -10,7 +10,7 @@ namespace Domain.Interfaces.Service
 
         public Task<IEnumerable<Product>> GetByFilters(string? name, string? category, decimal? minPrice, decimal? maxPrice);
 
-        public Task<Product> Update(Product product);
+        public Task<Product> Update(int productId, Product product);
 
         public void Delete(int productId);
     }

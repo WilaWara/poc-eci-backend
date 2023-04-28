@@ -25,12 +25,13 @@ namespace Application.Services
 
         public Task<Product> Create(Product product)
         {
+            product.Enabled = true;
             return _productRepository.Create(product);
         }
 
-        public Task<Product> Update(Product product)
+        public Task<Product> Update(int productId, Product product)
         {
-            return _productRepository.Update(product);
+            return _productRepository.Update(productId, product);
         }
 
         public void Delete(int productId)
