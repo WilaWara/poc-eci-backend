@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using API.DTOs;
+using AutoMapper;
+using Domain.Entities;
 
 namespace API.Mappers
 {
-    internal class ProductProfile
+    public class ProductProfile : Profile
     {
+        public ProductProfile()
+        {
+            CreateMap<Product, ProductCreateDTO>().ReverseMap();
+            CreateMap<Product, ProductResponseDTO>().ReverseMap();
+        }
     }
 }

@@ -41,11 +41,33 @@ namespace API.Controllers.V1
                 return BadRequest(ModelState);
             }
 
-            var newProduct = _mapper.Map<Product>(productCreateDTO);
-            var savedProduct = _productService.Create(newProduct);
+            Product newProduct = _mapper.Map<Product>(productCreateDTO);
+            Product savedProduct = await _productService.Create(newProduct);
 
             var responseProduct = _mapper.Map<ProductResponseDTO>(savedProduct);
-            return CreatedAtAction("Successfully created", new { id = responseProduct.Id }, responseProduct);
+            return Ok(responseProduct);
+        }
+
+        [HttpPut("{productId}")]
+        public async Task<IActionResult> Update(int productId, [FromBody] ProductCreateDTO productCreateDTO)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            Product updateData = _mapper.Map<Product>(productCreateDTO);
+            Product updatedProduct = await _productService.Update(productId, updateData);
+
+            var responseProduct = _mapper.Map<ProductResponseDTO>(updatedProduct);
+            return Ok(responseProduct);
+        }
+
+        [HttpDelete("{productId}")]
+        public async Task<IActionResult> Delete(int productId)
+        {
+            _productService.Delete(productId);
+            return NoContent();
         }
     }
 }

@@ -41,9 +41,9 @@ namespace Infrastructure.Repositories
             return product;
         }
 
-        public async Task<Product> Update(Product product)
+        public async Task<Product> Update(int productId, Product product)
         {
-            var existingProduct = GetById(product.Id);
+            var existingProduct = GetById(productId);
             if (existingProduct == null)
             {
                 throw new InvalidOperationException("The product doesn't exist");

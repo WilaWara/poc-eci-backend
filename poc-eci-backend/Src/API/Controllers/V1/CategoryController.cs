@@ -27,11 +27,11 @@ namespace API.Controllers.V1
                 return BadRequest(ModelState);
             }
 
-            var newCategory = _mapper.Map<Category>(categoryCreateDTO);
-            var savedCategory = _categoryService.Create(newCategory);
+            Category newCategory = _mapper.Map<Category>(categoryCreateDTO);
+            Category savedCategory = await _categoryService.Create(newCategory);
 
             var responseCategory = _mapper.Map<CategoryResponseDTO>(savedCategory);
-            return CreatedAtAction("Successfully created", new { id = responseCategory.Id }, responseCategory);
+            return Ok(responseCategory);
         }
     }
 }

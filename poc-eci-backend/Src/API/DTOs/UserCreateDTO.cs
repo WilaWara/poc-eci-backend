@@ -8,6 +8,7 @@ namespace API.DTOs
         public string Name { get; set; }
 
         [Required(ErrorMessage = "The user email is required")]
+        [EmailAddress(ErrorMessage = "Incorrect email format")]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "The user password is required")]
