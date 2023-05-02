@@ -2,10 +2,12 @@
 using AutoMapper;
 using Domain.Entities;
 using Domain.Interfaces.Service;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers.V1
 {
+    [Authorize]
     [ApiController]
     [Route("api/v1/categories")]
     public class CategoryController : ControllerBase
