@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MediatR;
 
 namespace Application.CQRS.Commands.Product
 {
-    internal class CreateProductCommand
-    {
-    }
+    public record CreateProductCommand(
+        string Name,
+        string Photo,
+        string Description,
+        int Stock,
+        decimal Price,
+        DateTime ExpireDate,
+        int CategoryId
+    ) : IRequest<Domain.Entities.Product>;
 }

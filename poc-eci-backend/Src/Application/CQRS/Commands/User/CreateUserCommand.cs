@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MediatR;
 
 namespace Application.CQRS.Commands.User
 {
-    internal class CreateUserCommand
-    {
-    }
+    public record CreateUserCommand(
+        string name, 
+        string email, 
+        string password, 
+        string role
+    ) : IRequest<Domain.Entities.User>;
 }

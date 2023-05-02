@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MediatR;
 
 namespace Application.CQRS.Commands.Product
 {
-    internal class UpdateProductCommand
-    {
-    }
+    public record UpdateProductCommand(int productId, Domain.Entities.Product product)
+        : IRequest<Domain.Entities.Product>;
 }

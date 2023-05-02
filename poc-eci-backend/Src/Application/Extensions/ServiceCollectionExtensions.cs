@@ -1,5 +1,7 @@
 ﻿using Application.Services;
 using Domain.Interfaces.Service;
+using MediatR;
+using System.Reflection;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -10,6 +12,7 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IUserService, UserService>();
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
             return services;
         }
     }

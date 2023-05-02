@@ -1,8 +1,11 @@
 ﻿using API.DTOs;
+using Application.CQRS.Commands.Category;
+using Application.CQRS.Commands.User;
 using Application.Services;
 using AutoMapper;
 using Domain.Entities;
 using Domain.Interfaces.Service;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -17,10 +20,17 @@ namespace API.Controllers.V1
         private readonly IUserService _userServices;
         private readonly IMapper _mapper;
 
-        public UserController(IUserService userServices, IMapper mapper)
+        private readonly IMediator _mediator;
+
+        public UserController(
+            IUserService userServices, 
+            IMapper mapper,
+            IMediator mediator)
         {
             _userServices = userServices;
             _mapper = mapper;
+
+            _mediator = mediator;
         }
 
         [Authorize(Roles = "admin")]
@@ -32,8 +42,17 @@ namespace API.Controllers.V1
                 return BadRequest(ModelState);
             }
 
-            User newUser = _mapper.Map<User>(userCreateDTO);
-            User savedUser = await _userServices.Create(newUser);
+            //To use with Service
+            //User newUser = _mapper.Map<User>(userCreateDTO);
+            //User savedUser = await _userServices.Create(newUser);
+
+            CreateUserCommand query = new CreateUserCommand(
+                userCreateDTO.Name,
+                userCreateDTO.Email,
+                userCreateDTO.Password,
+                userCreateDTO.Role
+            );
+            User savedUser = await _mediator.Send(query);
 
             var responseUser = _mapper.Map<UserResponseDTO>(savedUser);
             return Ok(responseUser);
