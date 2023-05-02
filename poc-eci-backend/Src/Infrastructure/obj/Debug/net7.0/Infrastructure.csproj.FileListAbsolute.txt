@@ -15,3 +15,5 @@ D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Infrastructure\obj\Debu
 D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Infrastructure\obj\Debug\net7.0\Infrastructure.pdb
 D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Infrastructure\obj\Debug\net7.0\Infrastructure.genruntimeconfig.cache
 D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Infrastructure\obj\Debug\net7.0\ref\Infrastructure.dll
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Infrastructure\bin\Debug\net7.0\Application.dll
+D:\Proyectos\PoC-ECI\poc-eci-backend\poc-eci-backend\Src\Infrastructure\bin\Debug\net7.0\Application.pdb

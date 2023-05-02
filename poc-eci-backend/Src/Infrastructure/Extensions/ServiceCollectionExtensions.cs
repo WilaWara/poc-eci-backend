@@ -3,6 +3,9 @@ using Infrastructure.Data;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using MediatR;
+using System.Reflection;
+using Application.CQRS.Handlers.Category;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -19,7 +22,6 @@ namespace Microsoft.Extensions.DependencyInjection
             {
                 options.UseSqlServer(connectionString);
             });
-
             return services;
         }
     }

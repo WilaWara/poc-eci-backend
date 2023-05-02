@@ -1,9 +1,12 @@
-using Infrastructure.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using MediatR;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
+//using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -68,9 +71,6 @@ builder.Services.AddSwaggerGen(options =>
         }
     });
 });
-
-
-
 
 var app = builder.Build();
 

@@ -18,7 +18,7 @@ namespace Application.Services
         public UserService(IUserRepository userRepository, IConfiguration configuration)
         {
             _userRepository = userRepository;
-            _secretKey = configuration.GetValue<string>("ApiSettings:Secret");
+            _secretKey = configuration.GetValue<string>("ApiSettings:Secret")!;
         }
 
         public Task<User> Create(User user)
@@ -26,22 +26,8 @@ namespace Application.Services
             return _userRepository.Create(user);
         }
 
-        public string EncodeMD5(string password)
-        {
-            MD5CryptoServiceProvider x = new MD5CryptoServiceProvider();
-            byte[] data = System.Text.Encoding.UTF8.GetBytes(password);
-            data = x.ComputeHash(data);
-            string encryptedPassword = "";
-            for (int i = 0; i < data.Length; i++)
-            {
-                encryptedPassword += data[i].ToString("x2").ToLower();
-            }
-            return encryptedPassword;
-        }
-
         public async Task<IDictionary<User, string>> Login(string email, string password)
         {
-            //string encryptedPassword = EncodeMD5(password);
             User existingUser = await _userRepository.Login(email, password);
             if (existingUser == null)
             {
