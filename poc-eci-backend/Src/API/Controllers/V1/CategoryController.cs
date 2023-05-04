@@ -19,9 +19,9 @@ namespace API.Controllers.V1
 
         private readonly IMediator _mediator;
 
-        public CategoryController(ICategoryService categoryService, IMapper mapper, IMediator mediator)
+        public CategoryController(IMapper mapper, IMediator mediator)
         {
-            _categoryService = categoryService;
+            //_categoryService = categoryService;
             _mapper = mapper;
 
             _mediator = mediator;
