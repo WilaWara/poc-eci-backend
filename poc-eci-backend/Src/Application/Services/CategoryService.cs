@@ -12,6 +12,12 @@ namespace Application.Services
         {
             _categoryRepository = categoryRepository;
         }
+
+        public async Task<IEnumerable<Category>> GetAll()
+        {
+            return await _categoryRepository.GetAll();
+        }
+
         public Task<Category> Create(Category category)
         {
             return _categoryRepository.Create(category);

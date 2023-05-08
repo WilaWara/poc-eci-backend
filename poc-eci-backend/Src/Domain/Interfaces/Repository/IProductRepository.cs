@@ -10,7 +10,7 @@ namespace Domain.Interfaces.Repository
 
         public Product GetById(int productId);
 
-        public Task<IEnumerable<Product>> GetByFilters(string? name, string? category, decimal? minPrice, decimal? maxPrice);
+        public Task<IEnumerable<Product>> GetByFilters(string? name, int? categoryId, decimal? minPrice, decimal? maxPrice);
 
         public Task<Product> Update(int productId, Product product);
 

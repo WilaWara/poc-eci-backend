@@ -18,9 +18,9 @@ namespace Application.Services
             return await _productRepository.GetAll();
         }
 
-        public Task<IEnumerable<Product>> GetByFilters(string? name, string? category, decimal? minPrice, decimal? maxPrice)
+        public Task<IEnumerable<Product>> GetByFilters(string? name, int? categoryId, decimal? minPrice, decimal? maxPrice)
         {
-            return _productRepository.GetByFilters(name, category, minPrice, maxPrice);
+            return _productRepository.GetByFilters(name, categoryId, minPrice, maxPrice);
         }
 
         public Task<Product> Create(Product product)

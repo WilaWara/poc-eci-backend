@@ -4,7 +4,7 @@ namespace Application.CQRS.Queries
 {
     public record GetByFiltersProductQuery(
         string? name, 
-        string? category,
+        int? categoryId,
         decimal? minPrice, 
         decimal? maxPrice
     )

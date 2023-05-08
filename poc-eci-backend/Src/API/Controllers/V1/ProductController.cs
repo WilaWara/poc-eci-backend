@@ -44,6 +44,25 @@ namespace API.Controllers.V1
             return Ok(responseProducts);
         }
 
+        [AllowAnonymous]
+        [HttpGet("filters")]
+        public async Task<IActionResult> GetByFiltersAsync(
+            string? name,
+            int? categoryId,
+            decimal? minPrice,
+            decimal? maxPrice
+        )
+        {
+            var products = await _productService.GetByFilters(name, categoryId, minPrice, maxPrice);
+            var responseProducts = new List<ProductResponseDTO>();
+            foreach (var product in products)
+            {
+                var responseProduct = _mapper.Map<ProductResponseDTO>(product);
+                responseProducts.Add(responseProduct);
+            }
+            return Ok(responseProducts);
+        }
+
         [Authorize(Roles = "admin")]
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] ProductCreateDTO productCreateDTO)

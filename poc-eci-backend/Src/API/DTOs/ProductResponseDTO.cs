@@ -10,5 +10,6 @@
         public decimal Price { get; set; }
         public DateTime ExpireDate { get; set; }
         public int CategoryId { get; set; }
+        public bool Enabled { get; set; }
     }
 }
