@@ -8,7 +8,7 @@ namespace Domain.Interfaces.Service
 
         public Task<IEnumerable<Product>> GetAll();
 
-        public Task<IEnumerable<Product>> GetByFilters(string? name, string? category, decimal? minPrice, decimal? maxPrice);
+        public Task<IEnumerable<Product>> GetByFilters(string? name, int? categoryId, decimal? minPrice, decimal? maxPrice);
 
         public Task<Product> Update(int productId, Product product);
 

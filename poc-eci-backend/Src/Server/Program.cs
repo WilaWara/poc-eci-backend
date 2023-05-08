@@ -1,11 +1,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using MediatR;
 using System.Text;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using System.Reflection;
 //using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -72,6 +68,12 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
+// CORS support
+builder.Services.AddCors(p => p.AddPolicy("PolicyCors", build =>
+{
+    build.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+}));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -83,7 +85,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-// app.UseCors("PolicyCors");
+app.UseCors("PolicyCors");
 
 app.UseAuthentication();
 

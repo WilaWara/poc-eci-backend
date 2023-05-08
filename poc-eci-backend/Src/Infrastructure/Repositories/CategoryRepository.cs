@@ -13,6 +13,13 @@ namespace Infrastructure.Repositories
             _db = db;
         }
 
+        public async Task<IEnumerable<Category>> GetAll()
+        {
+            return _db.Categories
+                .OrderBy(c => c.Id)
+                .ToList();
+        }
+
         public async Task<Category> Create(Category category)
         {
             _db.Categories.Add(category);

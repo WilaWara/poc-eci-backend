@@ -6,6 +6,7 @@ using Domain.Interfaces.Service;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Application.CQRS.Queries;
 
 namespace API.Controllers.V1
 {
@@ -19,29 +20,26 @@ namespace API.Controllers.V1
 
         private readonly IMediator _mediator;
 
-        public CategoryController(IMapper mapper, IMediator mediator)
+        public CategoryController(ICategoryService categoryService, IMapper mapper, IMediator mediator)
         {
-            //_categoryService = categoryService;
+            _categoryService = categoryService;
             _mapper = mapper;
-
             _mediator = mediator;
         }
 
-        //To use with Services
-        /*[HttpPost]
-        public async Task<IActionResult> Create([FromBody] CategoryCreateDTO categoryCreateDTO)
+        [AllowAnonymous]
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
         {
-            if (!ModelState.IsValid)
+            var categories = await _categoryService.GetAll();
+            var responseCategories = new List<CategoryResponseDTO>();
+            foreach (var category in categories)
             {
-                return BadRequest(ModelState);
+                var responseCategory = _mapper.Map<CategoryResponseDTO>(category);
+                responseCategories.Add(responseCategory);
             }
-
-            Category newCategory = _mapper.Map<Category>(categoryCreateDTO);
-            Category savedCategory = await _categoryService.Create(newCategory);
-
-            var responseCategory = _mapper.Map<CategoryResponseDTO>(savedCategory);
-            return Ok(responseCategory);
-        }*/
+            return Ok(responseCategories);
+        }
 
         //To use with CQRS Handlers
         [HttpPost]
@@ -54,6 +52,9 @@ namespace API.Controllers.V1
 
             CreateCategoryCommand query = new CreateCategoryCommand(categoryCreateDTO.Name);
             Category savedCategory = await _mediator.Send(query);
+
+            //Category newCategory = _mapper.Map<Category>(categoryCreateDTO); //To use with Services
+            //Category savedCategory = await _categoryService.Create(newCategory); //To use with Services
 
             var responseCategory = _mapper.Map<CategoryResponseDTO>(savedCategory);
             return Ok(responseCategory);

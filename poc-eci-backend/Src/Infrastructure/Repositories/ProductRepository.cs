@@ -1,6 +1,7 @@
 ﻿using Domain.Entities;
 using Domain.Interfaces.Repository;
 using Infrastructure.Data;
+using XAct.Categorization;
 
 namespace Infrastructure.Repositories
 {
@@ -16,7 +17,7 @@ namespace Infrastructure.Repositories
         public async Task<IEnumerable<Product>> GetAll()
         {
             return _db.Products
-                .Where(p => p.Enabled == true)
+                //.Where(p => p.Enabled == true) 
                 .OrderBy(p => p.Id)
                 .ToList();
         }
@@ -26,12 +27,43 @@ namespace Infrastructure.Repositories
             return _db.Products.FirstOrDefault(p => p.Id == productId);
         }
 
-        public async Task<IEnumerable<Product>> GetByFilters(string? name, string? category, decimal? minPrice, decimal? maxPrice)
+        public async Task<IEnumerable<Product>> GetByFilters(string? name, int? categoryId, decimal? minPrice, decimal? maxPrice)
         {
-            return _db.Products
-                .Where(p => p.Name.Contains(name))
-                .OrderBy(p => p.Id)
-                .ToList();
+            List<Product> products = new List<Product>();
+
+            if (name != null)
+            {
+                List<Product> filterName = _db.Products
+                    .Where(c => c.Name
+                    .ToLower()
+                    .Contains(
+                        name.ToLower().Trim()
+                    ))
+                    .ToList();
+                products.AddRange(filterName);
+            }
+
+            if (categoryId != null && categoryId != 0)
+            {
+                List<Product> filterCategory = _db.Products
+                    .Where(c => c.CategoryId == categoryId)
+                    .ToList();
+
+                List<Product> matchingProducts = products.Intersect(filterCategory).ToList();
+                products = matchingProducts;
+            }
+
+            if ((minPrice != null && minPrice != 0) && (maxPrice != null && maxPrice != 0))
+            {
+                List<Product> filterPrice = _db.Products
+                    .Where(c => c.Price >= minPrice && c.Price <= maxPrice)
+                    .ToList();
+
+                List<Product> matchingProducts = products.Intersect(filterPrice).ToList();
+                products = matchingProducts;
+            }
+
+            return products;
         }
 
         public async Task<Product> Create(Product product)

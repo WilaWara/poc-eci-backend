@@ -17,7 +17,7 @@ namespace Application.CQRS.Handlers.Product
         {
             return await _productRepository.GetByFilters(
                 request.name,
-                request.category,
+                request.categoryId,
                 request.minPrice,
                 request.maxPrice
             );
