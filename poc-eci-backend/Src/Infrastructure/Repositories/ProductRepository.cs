@@ -31,6 +31,15 @@ namespace Infrastructure.Repositories
         {
             List<Product> products = new List<Product>();
 
+            if ((name == "" || name == null) && 
+                (categoryId == 0 || categoryId == null) && 
+                (minPrice == 0 || minPrice == null) && 
+                (maxPrice == 0 || maxPrice == null))
+            {
+                products = _db.Products.OrderBy(p => p.Id).ToList();
+                return products;
+            }
+
             if (name != null)
             {
                 List<Product> filterName = _db.Products
@@ -40,7 +49,16 @@ namespace Infrastructure.Repositories
                         name.ToLower().Trim()
                     ))
                     .ToList();
-                products.AddRange(filterName);
+
+                if (products.Count() == 0)
+                {
+                    products.AddRange(filterName);
+                }
+                else
+                {
+                    List<Product> matchingProducts = products.Intersect(filterName).ToList();
+                    products = matchingProducts;
+                }
             }
 
             if (categoryId != null && categoryId != 0)
@@ -49,8 +67,15 @@ namespace Infrastructure.Repositories
                     .Where(c => c.CategoryId == categoryId)
                     .ToList();
 
-                List<Product> matchingProducts = products.Intersect(filterCategory).ToList();
-                products = matchingProducts;
+                if (products.Count() == 0)
+                {
+                    products.AddRange(filterCategory);
+                }
+                else
+                {
+                    List<Product> matchingProducts = products.Intersect(filterCategory).ToList();
+                    products = matchingProducts;
+                }
             }
 
             if ((minPrice != null && minPrice != 0) && (maxPrice != null && maxPrice != 0))
@@ -59,8 +84,15 @@ namespace Infrastructure.Repositories
                     .Where(c => c.Price >= minPrice && c.Price <= maxPrice)
                     .ToList();
 
-                List<Product> matchingProducts = products.Intersect(filterPrice).ToList();
-                products = matchingProducts;
+                if (products.Count() == 0)
+                {
+                    products.AddRange(filterPrice);
+                }
+                else
+                {
+                    List<Product> matchingProducts = products.Intersect(filterPrice).ToList();
+                    products = matchingProducts;
+                }
             }
 
             return products;
